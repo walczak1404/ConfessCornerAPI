@@ -4,6 +4,7 @@ using ConfessCorner.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ConfessCorner.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240320201829_DefaultValues")]
+    partial class DefaultValues
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -30,8 +33,8 @@ namespace ConfessCorner.Infrastructure.Migrations
                         .HasDefaultValueSql("NEWSEQUENTIALID()");
 
                     b.Property<string>("Author")
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<Guid?>("ConfessionId")
                         .HasColumnType("uniqueidentifier");
@@ -49,7 +52,7 @@ namespace ConfessCorner.Infrastructure.Migrations
 
                     b.HasIndex("ConfessionId");
 
-                    b.ToTable("Comments", (string)null);
+                    b.ToTable("Comments");
                 });
 
             modelBuilder.Entity("ConfessCorner.Core.Domain.Entities.Confession", b =>
@@ -60,8 +63,8 @@ namespace ConfessCorner.Infrastructure.Migrations
                         .HasDefaultValueSql("NEWSEQUENTIALID()");
 
                     b.Property<string>("Author")
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Content")
                         .HasMaxLength(1000)
@@ -78,7 +81,7 @@ namespace ConfessCorner.Infrastructure.Migrations
 
                     b.HasKey("ConfessionId");
 
-                    b.ToTable("Confessions", (string)null);
+                    b.ToTable("Confessions");
                 });
 
             modelBuilder.Entity("ConfessCorner.Core.Domain.Entities.Comment", b =>

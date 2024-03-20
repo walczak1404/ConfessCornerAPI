@@ -15,9 +15,10 @@ namespace ConfessCorner.Core.Domain.Entities
         [StringLength(1000)]
         public string? Content { get; set; }
 
-        [StringLength(50)]
+        [StringLength(20)]
         public string? Author { get; set; }
 
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public DateTime? CreatedOn { get; set; }
 
         public virtual List<Comment>? Comments { get; set; }
