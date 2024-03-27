@@ -1,7 +1,5 @@
 ﻿using ConfessCorner.Core.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ValueGeneration;
-using System.Reflection.Metadata.Ecma335;
 
 namespace ConfessCorner.Infrastructure.Context
 {

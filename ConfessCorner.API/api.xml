@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ConfessCorner.API</name>
+    </assembly>
+    <members>
+        <member name="T:ConfessCorner.API.Controllers.CommentsController">
+            <summary>
+            Posting and getting comments
+            </summary>
+        </member>
+        <member name="M:ConfessCorner.API.Controllers.CommentsController.GetCommentsForConfession(System.Guid)">
+            <summary>
+            Gets comments for confession with given id
+            </summary>
+            <param name="confessionId">Id of confession</param>
+            <returns>List of comments for specified confession</returns>
+        </member>
+        <member name="M:ConfessCorner.API.Controllers.CommentsController.GetCommentsAmountForConfession(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="confessionId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ConfessCorner.API.Controllers.CommentsController.PostComment(ConfessCorner.Core.DTO.CommentAddRequest)">
+            <summary>
+            Posts comment for confession with given confessionId in comment DTO
+            </summary>
+            <param name="commentAddRequest">Posted comment</param>
+            <returns>Posted comment</returns>
+        </member>
+        <member name="T:ConfessCorner.API.Controllers.ConfessionsController">
+            <summary>
+            Posting and getting confessions
+            </summary>
+        </member>
+        <member name="M:ConfessCorner.API.Controllers.ConfessionsController.GetConfessions(System.Int32)">
+            <summary>
+            Gets nth 10 confessions from database based on pageNumber parameter
+            </summary>
+            <param name="pageNumber">Positive integer that decides which confessions should be retrieved.</param>
+            <returns>List of retrieved confessions</returns>
+        </member>
+        <member name="M:ConfessCorner.API.Controllers.ConfessionsController.GetConfession(System.Nullable{System.Guid})">
+            <summary>
+            Gets single confession from database based on given id
+            </summary>
+            <param name="confessionId">Id of searched confession</param>
+            <returns>Found confession or Bad Request if not found</returns>
+        </member>
+        <member name="M:ConfessCorner.API.Controllers.ConfessionsController.PostConfession(ConfessCorner.Core.DTO.ConfessionAddRequest)">
+            <summary>
+            Posts new confession in database
+            </summary>
+            <param name="confessionAddRequest">Confession to post</param>
+            <returns>Posted confession</returns>
+        </member>
+    </members>
+</doc>

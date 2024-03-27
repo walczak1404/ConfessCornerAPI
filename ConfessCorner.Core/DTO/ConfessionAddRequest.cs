@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using ConfessCorner.Core.Domain.Entities;
+using System.ComponentModel.DataAnnotations;
 
 namespace ConfessCorner.Core.DTO
 {
@@ -14,6 +15,16 @@ namespace ConfessCorner.Core.DTO
 
         [StringLength(20)]
         public string? Author { get; set; }
+
+        public Confession ToConfession()
+        {
+            return new Confession()
+            {
+                Header = Header,
+                Content = Content,
+                Author = Author
+            };
+        }
 
     }
 }

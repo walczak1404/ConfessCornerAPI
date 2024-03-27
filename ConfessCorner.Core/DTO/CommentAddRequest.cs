@@ -1,4 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using ConfessCorner.Core.Domain.Entities;
+using System;
+using System.ComponentModel.DataAnnotations;
+using System.Security.Cryptography;
 
 namespace ConfessCorner.Core.DTO
 {
@@ -13,5 +16,15 @@ namespace ConfessCorner.Core.DTO
 
         [Required]
         public Guid? ConfessionId { get; set; }
+
+        public Comment ToComment()
+        {
+            return new Comment()
+            {
+                Author = Author,
+                Content = Content,
+                ConfessionId = ConfessionId
+            };
+        }
     }
 }
