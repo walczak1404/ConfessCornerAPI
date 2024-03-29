@@ -18,10 +18,10 @@
         </member>
         <member name="M:ConfessCorner.API.Controllers.CommentsController.GetCommentsAmountForConfession(System.Guid)">
             <summary>
-            
+            Gets amount of comments for confession with given id from database
             </summary>
-            <param name="confessionId"></param>
-            <returns></returns>
+            <param name="confessionId">Id of confession</param>
+            <returns>Amount of comments</returns>
         </member>
         <member name="M:ConfessCorner.API.Controllers.CommentsController.PostComment(ConfessCorner.Core.DTO.CommentAddRequest)">
             <summary>

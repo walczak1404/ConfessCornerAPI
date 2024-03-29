@@ -45,11 +45,11 @@ namespace ConfessCorner.API.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Gets amount of comments for confession with given id from database
         /// </summary>
-        /// <param name="confessionId"></param>
-        /// <returns></returns>
-        [HttpGet("amount/{confessionId:guid}")]
+        /// <param name="confessionId">Id of confession</param>
+        /// <returns>Amount of comments</returns>
+        [HttpGet("Amount/{confessionId:guid}")]
         [ProducesResponseType(typeof(int), StatusCodes.Status200OK)]
         public async Task<ActionResult<int>> GetCommentsAmountForConfession(Guid confessionId)
         {
