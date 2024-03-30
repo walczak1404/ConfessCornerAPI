@@ -22,7 +22,7 @@ builder.Services.AddScoped<ICommentsService, CommentsService>();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("dev"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("prod"));
 }, ServiceLifetime.Transient);
 
 builder.Services.AddEndpointsApiExplorer();
@@ -37,7 +37,7 @@ builder.Services.AddCors(options =>
     options.AddDefaultPolicy(policyBuilder =>
     {
         policyBuilder
-        .WithOrigins("http://localhost:4200")
+        .WithOrigins(builder.Configuration.GetValue<string>("AllowedOrigin"))
         .WithHeaders("Origin", "Content-type")
         .WithMethods("GET", "POST");
     });
