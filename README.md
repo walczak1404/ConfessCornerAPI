@@ -4,4 +4,4 @@ Welcome to the ConfessCorner API, the backbone of an anonymous confession platfo
 
 ## Endpoint documentation
 
-For documentation of specified endpoints go to [api documentation](confesscorner.hostingasp.pl/swagger).
+For documentation of specified endpoints go to [api documentation](http://confesscorner.hostingasp.pl/swagger).
